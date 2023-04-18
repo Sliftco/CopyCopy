@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CopyCopy</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div id="sidebar"></div>
+            <div id="grid"></div>
+        </div>
+        <div class="floating-stuff">
+            <div id="floatingButton" onclick="showInputForm()">+</div>
+            <div id="key-command">Shift + Cmd + I</div>
+        </div>
+        <div id="modal" class="hidden">
+            <div id="inputForm">
+                <input type="text" id="inputTitle" class="field" placeholder="Enter Title" />
+                <textarea id="inputValue" class="field" placeholder="Enter Snippet"></textarea>
+                <div class="cta">
+                    <button id="submitBtn" class="primary-bt copy-bt" onclick="addItem()">
+                        Add Item
+                    </button>
+                    <button id="cancelBtn" class="primary-bt edit-bt" onclick="cancel()">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
