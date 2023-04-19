@@ -10,6 +10,7 @@
     --gray-800: #1e293b;
     --gray-900: #0f172a;
 
+    --blue-500: #3b82f6;
     --blue-600: #2563eb;
     --blue-700: #1d4ed8;
     --blue-800: #1e40af;
@@ -22,44 +23,47 @@ body,
 button,
 input,
 textarea,
-h3 {
+h3,
+p {
     margin: 0;
     padding: 0;
     border: none;
     background: none;
-    font-family: Inter, sans-serif;
+    font-family: Bear Sans UI, Inter, Segoe UI, sans-serif;
+}
+
+h3 {
+    margin-bottom: 0.4rem;
 }
 
 body {
     background-color: var(--gray-100);
 }
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: 250px auto;
-    border-color: greenyellow;
     height: 100vh;
 }
 
 #sidebar {
     background-color: var(--gray-800);
-}
+} */
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(150px, max-content));
     gap: 30px;
     padding: 40px;
 }
 
 .grid-item {
-    max-width: 300px;
+    max-width: 250px;
     background-color: #fff;
     padding: 30px;
     border-radius: 20px;
     border: 2px solid var(--gray-200);
-    /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
 
 .hidden {
@@ -86,6 +90,11 @@ body {
     line-height: 76px;
     font-size: 40px;
     cursor: pointer;
+    transition: background-color 150ms ease-in;
+}
+
+#floatingButton:hover {
+    background-color: var(--blue-700);
 }
 
 #modal {
@@ -119,12 +128,12 @@ body {
     border-radius: 0.5rem;
 }
 
-.primary-bt {
+.all-bt {
     color: #fff;
     font-size: 14px;
     background-color: var(--gray-600);
     padding-block: 0.5rem;
-    border-radius: 2rem;
+    border-radius: 0.4rem;
     font-weight: 600;
     cursor: pointer;
 }
@@ -135,21 +144,44 @@ body {
     margin-top: 30px;
 }
 
-.copy-bt {
-    width: 55%;
+.primary-bt {
+    width: 65%;
     background-color: var(--blue-600);
     color: #fff;
+    transition: background-color 150ms ease-in, transform 150ms ease-in;
 }
 
-.edit-bt {
+.primary-bt:hover {
+    background-color: var(--blue-800);
+    transform: scale(1.02);
+}
+
+.secondary-bt {
     width: 25%;
     background: none;
     border: 2px solid var(--blue-600);
     color: var(--blue-600);
+    transition: background-color 150ms ease-in;
 }
 
-.delete-icon path {
-    fill: #b91c1c;
+.secondary-bt:hover {
+    background-color: var(--blue-600);
+    border: 2px solid var(--blue-600);
+    color: white;
+}
+
+.edit-bt,
+.delete-bt {
+    width: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 150ms ease-in;
+}
+
+.edit-bt:hover,
+.delete-bt:hover {
+    transform: scale(1.1);
 }
 
 #submitBtn {
